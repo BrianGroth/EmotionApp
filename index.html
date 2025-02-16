@@ -43,13 +43,17 @@
       max-width: 300px;
     }
     .color-bar {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      height: 75px;  /* Increased height for a fatter bar */
+      height: 100px;  /* Increased height for a thicker bar */
       margin-top: 0.3em;
       text-decoration: none;
       border-radius: 1px;
       transition: transform 0.2s, box-shadow 0.2s;
+      color: white;  /* Ensure text is visible */
+      font-size: 1.2em;  /* Adjust font size as needed */
     }
     .color-bar:hover {
       transform: scale(1.05);
@@ -71,7 +75,12 @@
         margin: 0.2em 0;
       }
       .color-bar {
-        height: 45px;  /* Slightly smaller on devices with less vertical space */
+        height: 60px;  /* Slightly smaller on devices with less vertical space */
+      }
+    }
+    @media (max-width: 600px) {
+      .color-bar {
+        height: 80px;  /* Adjust height for smaller screens */
       }
     }
   </style>
@@ -89,19 +98,12 @@
       .then(data => {
         const container = document.getElementById('emotion-container');
         data.emotions.forEach(emotion => {
-          const div = document.createElement('div');
-          div.className = 'emotion-range';
-          
-          const p = document.createElement('p');
-          p.textContent = emotion.range;
-          
           const a = document.createElement('a');
           a.href = emotion.id + '.html'; // e.g., fear-caution-trust.html
           a.className = 'color-bar ' + emotion.colorClass;
+          a.textContent = emotion.range;  // Move text inside the color bar
           
-          div.appendChild(p);
-          div.appendChild(a);
-          container.appendChild(div);
+          container.appendChild(a);
         });
       })
       .catch(error => console.error('Error loading JSON data:', error));
