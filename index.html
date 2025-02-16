@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="emotion_identifier_icon.png">
+  <title>Identify Your Emotion</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 0.5em 0;
+    }
+    hr {
+      margin: 0.5em 0;
+      width: 100%;
+      max-width: 400px;
+    }
+    .emotion-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      width: 100%;
+    }
+    .emotion-range {
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+    }
+    .color-bar {
+      display: block;
+      width: 100%;
+      height: 35px;
+      margin-top: 0.3em;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .color-bar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .bar-fear { background: linear-gradient(to right, #000000, #5e7480, #cce0ff); }
+    .bar-anger { background: linear-gradient(to right, #ff0000, #ffaaaa, #ffffff); }
+    .bar-sad { background: linear-gradient(to right, #808080, #ffff99, #ffff00); }
+    .bar-bad { background: linear-gradient(to right, #002b4d, #8fc286, #cceeb4); }
+    .bar-hate { background: linear-gradient(to right, #800080, #dd99dd, #ffc0cb); }
+    @media (max-height: 700px) {
+      body {
+        padding: 5px;
+      }
+      h1, h2 {
+        margin: 0.3em 0;
+      }
+      hr {
+        margin: 0.3em 0;
+      }
+      .color-bar {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Identify Your Emotion</h1>
+  <hr>
+  <h2>Select one of the 5 emotional ranges:</h2>
+  <div id="emotion-container" class="emotion-container">
+    <!-- Emotion cards will be generated here -->
+  </div>
+  <script>
+    fetch('emotions.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('emotion-container');
+        data.emotions.forEach(emotion => {
+          const div = document.createElement('div');
+          div.className = 'emotion-range';
+          
+          const p = document.createElement('p');
+          p.textContent = emotion.range;
+          
+          const a = document.createElement('a');
+          a.href = emotion.id + '.html'; // e.g., fear-caution-trust.html
+          a.className = 'color-bar ' + emotion.colorClass;
+          
+          div.appendChild(p);
+          div.appendChild(a);
+          container.appendChild(div);
+        });
+      })
+      .catch(error => console.error('Error loading JSON data:', error));
+  </script>
+</body>
+</html>

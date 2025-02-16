@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sad - Bittersweet - Happy</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    .back-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      transition: background-color 0.2s;
+    }
+    .back-button:hover {
+      background-color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin: 0.5em 0;
+    }
+    hr {
+      margin: 0.5em 0 1em 0;
+    }
+    .selected-label {
+      font-weight: 500;
+      margin-bottom: 0.3em;
+      text-align: center;
+    }
+    .gradient-box {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      /* Use the sad gradient */
+      background: linear-gradient(to right, #808080, #ffff99, #ffff00);
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      text-align: center;
+    }
+    p.description {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .gradient-box { margin: 10px; padding: 15px; }
+      .back-button { padding: 6px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back</a>
+  <h1>Your Emotion</h1>
+  <hr>
+  <p class="selected-label">You selected:</p>
+  <p id="emotion-range" style="text-align: center;"></p>
+  <div id="gradient-box" class="gradient-box">
+    <!-- Adjectives text will be inserted here -->
+  </div>
+  <p id="description" class="description"></p>
+
+  <script>
+    fetch('emotions.json')
+      .then(response => response.json())
+      .then(data => {
+        const emotion = data.emotions.find(e => e.id === 'sad-bittersweet-happy');
+        if (emotion) {
+          document.getElementById('emotion-range').textContent = emotion.range;
+          document.getElementById('gradient-box').innerHTML = '<p>' + emotion.adjectives + '</p>';
+          document.getElementById('description').textContent = emotion.description;
+        } else {
+          console.error('Emotion data not found.');
+        }
+      })
+      .catch(error => console.error('Error loading JSON data:', error));
+  </script>
+</body>
+</html>

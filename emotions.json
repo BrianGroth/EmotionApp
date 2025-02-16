@@ -1,0 +1,40 @@
+{
+    "emotions": [
+      {
+        "id": "fear-caution-trust",
+        "range": "Fear ←→ Caution ←→ Trust",
+        "colorClass": "bar-fear",
+        "adjectives": "Scared, Terror, Panic, Dread, Fear, Uneasy, Anxious, Nervousness, Apprehension, Unease, Caution, Neutral, Confidence, Calm, Assurance, Safety, Trust, Faith",
+        "description": "For the range between Fear and Trust, the emotions span from feeling scared, uneasy, or anxious to feeling confident, calm, and trusting."
+      },
+      {
+        "id": "anger-acceptance-zen",
+        "range": "Anger ←→ Acceptance ←→ Zen",
+        "colorClass": "bar-anger",
+        "adjectives": "Furious, Resentful, Irritated, Tense, Accepting, Calm, Zen",
+        "description": "This range explores the journey from intense anger through a phase of acceptance and ultimately reaching a state of Zen calm."
+      },
+      {
+        "id": "sad-bittersweet-happy",
+        "range": "Sad ←→ Bittersweet ←→ Happy",
+        "colorClass": "bar-sad",
+        "adjectives": "Melancholic, Reflective, Bittersweet, Joyful, Happy",
+        "description": "This range moves from sadness through a bittersweet stage and eventually to happiness."
+      },
+      {
+        "id": "bad-hope-good",
+        "range": "Bad ←→ Hope ←→ Good",
+        "colorClass": "bar-bad",
+        "adjectives": "Discontent, Hopeless, Overwhelmed, Hopeful, Good",
+        "description": "This range covers the progression from feeling bad and hopeless to ultimately experiencing goodness and hope."
+      },
+      {
+        "id": "hate-compassion-love",
+        "range": "Hate ←→ Compassion ←→ Love",
+        "colorClass": "bar-hate",
+        "adjectives": "Hateful, Indifferent, Compassionate, Loving, Love",
+        "description": "This range examines the transition from hate to compassion, culminating in love."
+      }
+    ]
+  }
+  
