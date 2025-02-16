@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="emotion_identifier_icon.png">
   <title>Identify Your Emotion</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
   <style>
@@ -24,10 +23,10 @@
     }
     h1, h2 {
       text-align: center;
-      margin: 0.5em 0;
+      margin: 0.3em 0;
     }
     hr {
-      margin: 0.5em 0;
+      margin: 0.3em 0;
       width: 100%;
       max-width: 400px;
     }
@@ -35,7 +34,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1em;
+      gap: 0.8em;
       width: 100%;
     }
     .emotion-range {
@@ -46,7 +45,7 @@
     .color-bar {
       display: block;
       width: 100%;
-      height: 35px;
+      height: 50px;  /* Increased height for a fatter bar */
       margin-top: 0.3em;
       text-decoration: none;
       border-radius: 5px;
@@ -66,13 +65,13 @@
         padding: 5px;
       }
       h1, h2 {
-        margin: 0.3em 0;
+        margin: 0.2em 0;
       }
       hr {
-        margin: 0.3em 0;
+        margin: 0.2em 0;
       }
       .color-bar {
-        height: 30px;
+        height: 45px;  /* Slightly smaller on devices with less vertical space */
       }
     }
   </style>
