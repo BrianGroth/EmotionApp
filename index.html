@@ -4,44 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emotion App</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fff;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
     }
+    a {
+      text-decoration: none;
+    }
+    /* Header */
     header {
+      background-color: #fff;
       padding: 20px;
-      background-color: #f0f0f0;
-      margin-bottom: 30px;
-    }
-    .emotion-pairs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       margin-bottom: 40px;
     }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    /* Main Container */
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Emotion Cards Layout */
+    .emotion-pairs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
     .emotion-pair {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      width: 200px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .emotion-pair:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .emotion-pair .content {
+      padding: 20px;
+      text-align: center;
     }
     .emotion-text {
-      font-size: 24px;
-      display: block;
-      margin-bottom: 5px;
-    }
-    .color-band {
-      height: 2px;
-      background-color: #333;
-      transition: background-color 0.3s;
-    }
-    .emotion-pair:hover .color-band {
-      background-color: #555;
+      font-size: 1.5em;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -51,27 +70,35 @@
   </header>
   <main>
     <div class="emotion-pairs">
-      <!-- Example emotion pair: Fear <--> Trust -->
+      <!-- Emotion Pair: Fear ↔ Trust -->
       <a href="FearTrust.html" class="emotion-pair">
-        <span class="emotion-text">Fear &#x2194; Trust</span>
-        <div class="color-band"></div>
+        <div class="content">
+          <span class="emotion-text">Fear &#x2194; Trust</span>
+        </div>
       </a>
-      <!-- Additional emotion pairs (you can create corresponding subpages using text from your CSV file) -->
+      <!-- Emotion Pair: Anger ↔ Joy -->
       <a href="AngerJoy.html" class="emotion-pair">
-        <span class="emotion-text">Anger &#x2194; Joy</span>
-        <div class="color-band"></div>
+        <div class="content">
+          <span class="emotion-text">Anger &#x2194; Joy</span>
+        </div>
       </a>
+      <!-- Emotion Pair: Surprise ↔ Anticipation -->
       <a href="SadHappy.html" class="emotion-pair">
-        <span class="emotion-text">Surprise &#x2194; Anticipation</span>
-        <div class="color-band"></div>
+        <div class="content">
+          <span class="emotion-text">Surprise &#x2194; Anticipation</span>
+        </div>
       </a>
+      <!-- Emotion Pair: Sadness ↔ Disgust -->
       <a href="BadGood.html" class="emotion-pair">
-        <span class="emotion-text">Sadness &#x2194; Disgust</span>
-        <div class="color-band"></div>
+        <div class="content">
+          <span class="emotion-text">Sadness &#x2194; Disgust</span>
+        </div>
       </a>
+      <!-- Emotion Pair: Acceptance ↔ Contempt -->
       <a href="HateLove.html" class="emotion-pair">
-        <span class="emotion-text">Acceptance &#x2194; Contempt</span>
-        <div class="color-band"></div>
+        <div class="content">
+          <span class="emotion-text">Acceptance &#x2194; Contempt</span>
+        </div>
       </a>
     </div>
   </main>
