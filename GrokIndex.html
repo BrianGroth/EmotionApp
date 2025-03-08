@@ -1,0 +1,217 @@
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emotion Identifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6b7280;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8fafc, #dbeafe);
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.25rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .intro-text {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.125rem;
+      color: #4b5563;
+    }
+
+    /* Emotion Cards */
+    .emotion-pairs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .emotion-pair {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .emotion-pair:hover,
+    .emotion-pair:focus {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .emotion-pair:focus {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
+
+    .content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .emotion-text {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0 0 1rem;
+      color: #1f2937;
+    }
+
+    .color-bar {
+      height: 10px;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    .emotion-pair:hover .color-bar {
+      height: 14px;
+    }
+
+    .fear-trust { background: linear-gradient(to right, #1f2937, #93c5fd); }
+    .anger-zen { background: linear-gradient(to right, #dc2626, #e5e7eb); }
+    .sad-happy { background: linear-gradient(to right, #6b7280, #fef08a); }
+    .bad-good { background: linear-gradient(to right, #2563eb, #86efac); }
+    .hate-love { background: linear-gradient(to right, #7c3aed, #f9a8d4); }
+
+    /* Tips Section */
+    .tips-section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tips-section h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 1.75rem;
+    }
+
+    .tips-section ul {
+      padding-left: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .tips-section li {
+      margin-bottom: 0.75rem;
+      color: #4b5563;
+    }
+
+    /* Accessibility */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.875rem; }
+      .intro-text { font-size: 1rem; }
+      .emotion-text { font-size: 1.125rem; }
+      .tips-section h2 { font-size: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 1rem; }
+      header h1 { font-size: 1.5rem; }
+      .content { padding: 1rem; }
+      .emotion-text { font-size: 1rem; }
+      .tips-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emotion Identifier</h1>
+  </header>
+  <main>
+    <p class="intro-text">Explore your emotions by selecting a range below</p>
+    <div class="emotion-pairs">
+      <a href="FearTrust.html" class="emotion-pair" tabindex="0">
+        <div class="content">
+          <span class="emotion-text">Fear ↔ Trust</span>
+          <div class="color-bar fear-trust"></div>
+        </div>
+      </a>
+      <a href="AngerZen.html" class="emotion-pair" tabindex="0">
+        <div class="content">
+          <span class="emotion-text">Anger ↔ Zen</span>
+          <div class="color-bar anger-zen"></div>
+        </div>
+      </a>
+      <a href="SadHappy.html" class="emotion-pair" tabindex="0">
+        <div class="content">
+          <span class="emotion-text">Sad ↔ Happy</span>
+          <div class="color-bar sad-happy"></div>
+        </div>
+      </a>
+      <a href="BadGood.html" class="emotion-pair" tabindex="0">
+        <div class="content">
+          <span class="emotion-text">Bad ↔ Good</span>
+          <div class="color-bar bad-good"></div>
+        </div>
+      </a>
+      <a href="HateLove.html" class="emotion-pair" tabindex="0">
+        <div class="content">
+          <span class="emotion-text">Hate ↔ Love</span>
+          <div class="color-bar hate-love"></div>
+        </div>
+      </a>
+    </div>
+    <div class="tips-section">
+      <h2>Helpful Tips</h2>
+      <ul>
+        <li>Say <em>"I feel... when you... because..."</em> and respond with <em>"What I heard you say is..."</em></li>
+        <li>Acknowledge that what you or others feel is valid</li>
+        <li>Instead of arguing, ask <em>"How are you feeling?"</em></li>
+        <li>Avoid placing blame</li>
+        <li>Be willing to admit when you're wrong</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
