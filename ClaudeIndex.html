@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emotional Compass | Navigate Your Feelings</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #5c6bc0;
+      --secondary-color: #8e24aa;
+      --background-gradient: linear-gradient(135deg, #f5f7ff, #e8eaf6);
+      --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+      --text-primary: #333;
+      --text-secondary: #666;
+      --white: #fff;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--background-gradient);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 3rem;
+    }
+    
+    .intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .intro p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Emotion Cards Layout */
+    .emotion-pairs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .emotion-pair {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      overflow: hidden;
+      height: 100%;
+      position: relative;
+    }
+    
+    .emotion-pair:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .emotion-pair:focus {
+      outline: 3px solid var(--primary-color);
+    }
+    
+    .emotion-pair .content {
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .emotion-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      display: block;
+    }
+    
+    .emotion-description {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .color-bar {
+      height: 8px;
+      width: 100%;
+      margin-top: auto;
+      border-radius: 4px;
+      position: relative;
+    }
+    
+    .color-bar::before,
+    .color-bar::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+    
+    .color-bar::before {
+      left: 0;
+    }
+    
+    .color-bar::after {
+      right: 0;
+    }
+    
+    .fear-trust {
+      background: linear-gradient(to right, #2d3436, #74b9ff);
+    }
+    
+    .fear-trust::before {
+      content: "Fear";
+    }
+    
+    .fear-trust::after {
+      content: "Trust";
+    }
+    
+    .anger-zen {
+      background: linear-gradient(to right, #d63031, #55efc4);
+    }
+    
+    .anger-zen::before {
+      content: "Anger";
+    }
+    
+    .anger-zen::after {
+      content: "Zen";
+    }
+    
+    .sad-happy {
+      background: linear-gradient(to right, #636e72, #fdcb6e);
+    }
+    
+    .sad-happy::before {
+      content: "Sad";
+    }
+    
+    .sad-happy::after {
+      content: "Happy";
+    }
+    
+    .bad-good {
+      background: linear-gradient(to right, #6c5ce7, #00b894);
+    }
+    
+    .bad-good::before {
+      content: "Bad";
+    }
+    
+    .bad-good::after {
+      content: "Good";
+    }
+    
+    .hate-love {
+      background: linear-gradient(to right, #6c5ce7, #ff7675);
+    }
+    
+    .hate-love::before {
+      content: "Hate";
+    }
+    
+    .hate-love::after {
+      content: "Love";
+    }
+    
+    /* Tips Section */
+    .tips-section {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      margin-top: 2rem;
+    }
+    
+    .tips-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary-color);
+      display: inline-block;
+    }
+    
+    .tips-list {
+      list-style: none;
+    }
+    
+    .tips-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .tips-list li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+    
+    .highlight {
+      font-style: italic;
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+    
+    /* About Section */
+    .about-section {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+    
+    .about-section p {
+      margin-bottom: 1rem;
+    }
+    
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 1.5rem 0;
+        margin-bottom: 1.5rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 0 1.5rem 2rem;
+      }
+      
+      .intro p {
+        font-size: 1.1rem;
+      }
+      
+      .emotion-pairs {
+        gap: 1.5rem;
+      }
+      
+      .tips-section {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      header {
+        padding: 1.25rem 0;
+        margin-bottom: 1.25rem;
+      }
+      
+      header h1 {
+        font-size: 1.75rem;
+      }
+      
+      .container {
+        padding: 0 1rem 1.5rem;
+      }
+      
+      .emotion-text {
+        font-size: 1.3rem;
+      }
+      
+      .emotion-pairs {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      
+      .tips-section {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emotional Compass</h1>
+  </header>
+  
+  <div class="container">
+    <div class="intro">
+      <p>Explore emotional spectrums to better understand your feelings and improve communication with others.</p>
+    </div>
+    
+    <div class="emotion-pairs">
+      <a href="FearTrust.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Fear &#8594; Trust</span>
+          <p class="emotion-description">From anxiety and uncertainty to confidence, security, and faith in others.</p>
+          <div class="color-bar fear-trust"></div>
+        </div>
+      </a>
+      
+      <a href="AngerZen.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Anger &#8594; Zen</span>
+          <p class="emotion-description">From frustration and rage to calmness, acceptance, and inner peace.</p>
+          <div class="color-bar anger-zen"></div>
+        </div>
+      </a>
+      
+      <a href="SadHappy.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Sad &#8594; Happy</span>
+          <p class="emotion-description">From sorrow and melancholy to joy, contentment, and emotional fulfillment.</p>
+          <div class="color-bar sad-happy"></div>
+        </div>
+      </a>
+      
+      <a href="BadGood.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Bad &#8594; Good</span>
+          <p class="emotion-description">From negative experiences to positive outlooks and favorable outcomes.</p>
+          <div class="color-bar bad-good"></div>
+        </div>
+      </a>
+      
+      <a href="HateLove.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Hate &#8594; Love</span>
+          <p class="emotion-description">From intense dislike and aversion to deep affection, compassion, and connection.</p>
+          <div class="color-bar hate-love"></div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tips-section">
+      <h2>Communication Tips</h2>
+      <ul class="tips-list">
+        <li>Express yourself using the format: <span class="highlight">"I feel _____ when you _____ because _____"</span> and when someone shares with you, respond with <span class="highlight">"What I heard you say is..."</span></li>
+        <li>Remember that all emotions are valid — what you and others feel is real.</li>
+        <li>When conversations become heated, pause the debate and ask <span class="highlight">"How are you feeling right now?"</span></li>
+        <li>Focus on understanding instead of blaming others for your emotions.</li>
+        <li>Practice humility by acknowledging when you're wrong and how your actions affect others.</li>
+        <li>Give yourself and others permission to experience the full range of emotions.</li>
+      </ul>
+    </div>
+    
+    <div class="about-section">
+      <p>This tool is designed to help identify, understand, and navigate emotions for better self-awareness and communication.</p>
+    </div>
+  </div>
+</body>
+</html>
