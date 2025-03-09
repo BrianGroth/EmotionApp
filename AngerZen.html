@@ -3,40 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anger - Satori (Zen)</title>
+  <title>Anger to Satori (Zen) Emotional Spectrum</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background-color: #fff; }
-    header { text-align: center; margin-bottom: 20px; }
-    .content { max-width: 800px; margin: 0 auto; text-align: left; line-height: 1.6; }
-    .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0066cc; }
+    :root {
+      --primary-color: #b71c1c;
+      --secondary-color: #ffffff;
+      --accent: #ff5252;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #ffebee, #ffffff);
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .content {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: 0.3s ease;
+    }
+
+    .back-link:hover { color: var(--secondary-color); }
+
+    h2 {
+      color: var(--primary-color);
+      margin: 1.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .spectrum-container {
+      position: relative;
+      height: 3rem;
+      background: linear-gradient(to right, #b71c1c, #ffffff);
+      border-radius: var(--border-radius);
+      margin: 1rem 0;
+    }
+
+    .emotions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .emotion-tag {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .emotion-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--box-shadow);
+    }
+
   </style>
 </head>
 <body>
-  <header><h1>Anger vs Satori (Zen)</h1></header>
-  <div class="content">
-    <a href="index.html" class="back-link">&#8592; Back to Home</a>
-    <h2>Description</h2>
-    <p>This emotional journey extends from intense frustration and anger, through irritation and neutral reflection, moving towards a deep acceptance, tranquility, and ultimately, a peaceful, mindful state of clarity (Satori or Zen).</p>
+  <header>
+    <h1>Emotional Spectrum: Anger to Satori (Zen)</h1>
+  </header>
+  
+  <div class="container">
+    <div class="content">
+      <a href="index.html" class="back-link">&#8592; Back to Home</a>
+      
+      <h2>Understanding This Spectrum</h2>
+      <p>This emotional journey extends from intense anger and frustration, through irritation and neutrality, moving towards acceptance, tranquility, and ultimately achieving a peaceful, mindful state of clarity (Satori or Zen).</p>
 
-    <h2>Understanding</h2>
-    <p>Feelings of anger indicate unmet expectations or violated boundaries. Understanding and acknowledging these emotions can guide you towards healthier expressions and proactive solutions, eventually fostering emotional maturity, acceptance, and peaceful clarity.</p>
+      <div class="emotion-spectrum">
+        <h3>Visualizing the Spectrum</h3>
+        <div class="spectrum-container" role="img" aria-label="Visual gradient from anger (red) to zen (white)"></div>
+        <div class="emotions-list">
+          <span class="emotion-tag">Rage</span>
+          <span class="emotion-tag">Frustration</span>
+          <span class="emotion-tag">Irritation</span>
+          <span class="emotion-tag">Neutral</span>
+          <span class="emotion-tag">Acceptance</span>
+          <span class="emotion-tag">Tranquility</span>
+          <span class="emotion-tag">Zen</span>
+        </div>
 
-    <h2>Helping Others</h2>
-    <ul>
-      <li>Provide space and permission to safely express and articulate their anger.</li>
-      <li>Encourage reflection on underlying causes and personal boundaries.</li>
-      <li>Facilitate calm and respectful communication focused on resolution.</li>
-    </ul>
+      <h2>Supporting Others</h2>
+      <ul>
+        <li>Provide space for safe expression and exploration of anger.</li>
+        <li>Facilitate calm discussions focused on identifying and resolving underlying causes.</li>
+        <li>Support practices that foster emotional acceptance and serenity.</li>
+      </ul>
 
-    <h2>Helping Myself</h2>
-    <ul>
-      <li>Take mindful pauses to prevent reactionary behaviors.</li>
-      <li>Practice meditation or calming techniques to regain emotional balance.</li>
-      <li>Reflect thoughtfully to express your feelings constructively and assertively.</li>
-    </ul>
+      <h2>Self-Care Strategies</h2>
+      <ul>
+        <li>Regularly practice calming techniques, such as meditation and deep breathing exercises.</li>
+        <li>Recognize triggers and practice proactive responses rather than reactive behaviors.</li>
+        <li>Engage in reflective practices that promote emotional clarity and acceptance.</li>
+      </ul>
 
-    <h2>Range of Emotions</h2>
-    <p>Rage, Enraged, Furious, Infuriated, Livid, Hostility, Aggressive, Violated, Threatened, Irritated, Frustrated, Skeptical, Critical, Accepting, Neutral, Understanding, Patient, Calm, Peaceful, Serenity, Zen</p>
+      <h2>Complete Emotional Range</h2>
+      <p>The spectrum includes: Rage, Furious, Anger, Hostility, Aggression, Irritation, Frustration, Neutrality, Acceptance, Reflection, Patience, Tranquility, Serenity, Peace, and Zen.</p>
+
+      <div class="resources">
+        <h3>Additional Resources</h3>
+        <ul>
+          <li>Mindfulness practices and meditation</li>
+          <li>Anger management counseling resources</li>
+          <li>Professional mental health support services</li>
+          <li>Mindfulness apps like Headspace or Calm</li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>

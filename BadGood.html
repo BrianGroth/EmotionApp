@@ -3,40 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bad - Good</title>
+  <title>Bad to Good Emotional Spectrum</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background-color: #fff; }
-    header { text-align: center; margin-bottom: 20px; }
-    .content { max-width: 800px; margin: 0 auto; text-align: left; line-height: 1.6; }
-    .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0066cc; }
+    :root {
+      --primary-color: #0d47a1;
+      --secondary-color: #ff8a80;
+      --accent: #ff1744;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #0d47a1, #ff8a80);
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+    .content { background: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 2rem; }
+    h2 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; color: var(--primary-color); }
   </style>
 </head>
 <body>
-  <header><h1>Bad vs Good</h1></header>
-  <div class="content">
-    <a href="index.html" class="back-link">&#8592; Back to Home</a>
-    <h2>Description</h2>
-    <p>This emotional scale encompasses strong negativity, dissatisfaction, and pessimism, moving through neutral states of acceptance towards positivity, optimism, appreciation, and genuine gratitude.</p>
+  <header>
+    <h1>Bad to Good Emotional Spectrum</h1>
+  </header>
 
-    <h2>Understanding</h2>
-    <p>Negative emotions can reflect dissatisfaction or conflicts within your life circumstances. Recognizing and thoughtfully engaging with these emotions can catalyze positive changes, leading toward emotional growth, gratitude, and greater fulfillment.</p>
+  <div class="container">
+    <div class="content">
+      <a href="index.html" class="back-link">&#8592; Back to Home</a>
 
-    <h2>Helping Others</h2>
-    <ul>
-      <li>Empathetically acknowledge their emotional experiences without reinforcing negativity.</li>
-      <li>Gently encourage reflection to identify underlying triggers and patterns.</li>
-      <li>Support positive reframing and gratitude-building practices.</li>
-    </ul>
+      <h2>Understanding This Spectrum</h2>
+      <p>This emotional range covers feelings from intense negativity and dissatisfaction, through neutrality, toward optimism, satisfaction, appreciation, and genuine gratitude.</p>
 
-    <h2>Helping Myself</h2>
-    <ul>
-      <li>Engage in regular gratitude reflections or journaling to enhance positivity.</li>
-      <li>Recognize and thoughtfully challenge recurring negative thought patterns.</li>
-      <li>Pursue activities and interactions that foster emotional upliftment and satisfaction.</li>
-    </ul>
+      <div class="emotion-spectrum">
+        <h3>Visualizing the Spectrum</h3>
+        <div class="spectrum-container" style="height:3rem; background:linear-gradient(to right, darkblue, lightcoral); border-radius: var(--border-radius);"></div>
+        <div class="emotions-list">
+          <span class="emotion-tag">Loathing</span>
+          <span class="emotion-tag">Disgust</span>
+          <span class="emotion-tag">Neutral</span>
+          <span class="emotion-tag">Acceptance</span>
+          <span class="emotion-tag">Hope</span>
+          <span class="emotion-tag">Gratitude</span>
+          <span class="emotion-tag">Inspired</span>
+        </div>
+      </div>
 
-    <h2>Range of Emotions</h2>
-    <p>Loathing, Detestable, Abhorrent, Repugnant, Revolted, Revulsion, Disgust, Disgusted, Contempt, Judgmental, Awful, Disapproval, Disappointed, Disillusioned, Aversion, Avoidant, Hesitant, Hesitation, Timid, Doubt, Pessimism, Neutral, Tolerance, Open-minded, Acceptance, Hope, Encouraging, Optimism, Positivity, Relief, Satisfaction, Appreciation, Goodness, Gratitude, Fulfilled, Inspired, Uplifted</p>
+      <h2>Supporting Others</h2>
+      <ul>
+        <li>Empathetically acknowledge their emotional experiences without reinforcing negativity.</li>
+        <li>Encourage reflection to understand emotional triggers.</li>
+        <li>Support positive reframing and practices of gratitude.</li>
+      </ul>
+
+      <h2>Self-Care Strategies</h2>
+      <ul>
+        <li>Regularly practice gratitude journaling or reflective exercises.</li>
+        <li>Recognize and challenge recurring negative thought patterns.</li>
+        <li>Engage in uplifting and emotionally rewarding activities.</li>
+      </ul>
+
+      <h2>Complete Emotional Range</h2>
+      <p>The spectrum includes: Loathing, Disgust, Contempt, Judgmental, Disappointed, Neutral, Acceptance, Hope, Optimism, Satisfaction, Appreciation, Gratitude, Inspired, Uplifted.</p>
+
+      <div class="resources">
+        <h3>Additional Resources</h3>
+        <ul>
+          <li>Positive psychology resources</li>
+          <li>Gratitude journaling apps</li>
+          <li>Cognitive behavioral therapy (CBT) services</li>
+          <li>Online and local mental health support groups</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>
