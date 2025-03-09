@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emotion App</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* Header */
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    /* Main Container */
+    main {
+      padding: 5px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Emotion Cards Layout */
+    .emotion-pairs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .emotion-pair {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .emotion-pair:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .emotion-pair .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .emotion-text {
+      font-size: 1.5em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .color-bar {
+      height: 8px;
+      width: 100%;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    .fear-trust {
+      background: linear-gradient(to right, #000000, #add8e6);
+    }
+
+    .anger-zen {
+      background: linear-gradient(to right, #ff0000, #ffffff);
+    }
+
+    .sad-happy {
+      background: linear-gradient(to right, #808080, #ffff00);
+    }
+
+    .bad-good {
+      background: linear-gradient(to right, #0000ff, #90ee90);
+    }
+
+    .hate-love {
+      background: linear-gradient(to right, #4b0082, #ffc0cb);
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 15px;
+        margin-bottom: 5px;
+      }
+      
+      header h1 {
+        font-size: 2em;
+      }
+
+      main {
+        padding: 10px;
+      }
+
+      .emotion-text {
+        font-size: 1.3em;
+      }
+
+      .emotion-pairs {
+        gap: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header {
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .emotion-pair .content {
+        padding: 15px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emotion Identifyer</h1>
+  </header>
+  <main>
+    <p>Select an emotional range.</p>
+    <div class="emotion-pairs">
+      <a href="FearTrust.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Fear &#x2194; Trust</span>
+          <div class="color-bar fear-trust"></div>
+        </div>
+      </a>
+      <a href="AngerZen.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Anger &#x2194; Zen</span>
+          <div class="color-bar anger-zen"></div>
+        </div>
+      </a>
+      <a href="SadHappy.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Sad &#x2194; Happy</span>
+          <div class="color-bar sad-happy"></div>
+        </div>
+      </a>
+      <a href="BadGood.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Bad &#x2194; Good</span>
+          <div class="color-bar bad-good"></div>
+        </div>
+      </a>
+      <a href="HateLove.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Hate &#x2194; Love</span>
+          <div class="color-bar hate-love"></div>
+        </div>
+      </a>
+    </div>  
+    <h2>A Few Tips</h2>
+    <ul>
+      <li>Say <i>“I feel.....when you.....because.....”</i> and when someone says that to you, reply with <i>“What I heard you say is...”</i></li>
+      <li>What you/I feel is real.</li>
+      <li>Stop arguing and ask <i>“How you are feeling?”.</i></li>
+      <li>Don't blame.</li>
+      <li>Admit to being wrong.</li>
+    </ul>  
+  </main>
+</body>
+</html>
