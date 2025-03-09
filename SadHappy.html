@@ -3,44 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sad - Happy</title>
+  <title>Emotional Spectrum: Sad to Happy</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background: linear-gradient(to bottom, #e0e0e0, #fffacd); }
-    header { text-align: center; margin-bottom: 20px; }
-    .content { max-width: 800px; margin: 0 auto; text-align: left; line-height: 1.6; }
-    .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0066cc; }
-    ul { padding-left: 20px; }
-    h2 { border-bottom: 2px solid #f0c419; padding-bottom: 5px; }
-    p, ul { padding: 5px 0; }
-    body { background: linear-gradient(to bottom, #d3d3d3, #fff9c4); }
+    :root {
+      --primary-color: #5c6bc0;
+      --secondary-color: #8e24aa;
+      --light-bg: #f5f7ff;
+      --dark-text: #333;
+      --light-text: #666;
+      --accent: #ffc107;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-text);
+      background: linear-gradient(135deg, #e8eaf6, #f5f5f5);
+      padding: 0;
+      margin: 0;
+    }
+    
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .content {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .back-link:hover {
+      color: var(--secondary-color);
+    }
+    
+    .back-link svg {
+      margin-right: 0.5rem;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin: 1.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      font-size: 1.5rem;
+    }
+    
+    p, ul {
+      margin-bottom: 1.5rem;
+      color: var(--light-text);
+    }
+    
+    ul {
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .emotion-spectrum {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0;
+    }
+    
+    .spectrum-container {
+      position: relative;
+      height: 3rem;
+      background: linear-gradient(to right, #3949ab, #7986cb, #c5cae9, #ffecb3, #ffd54f, #ffb300);
+      border-radius: var(--border-radius);
+      margin: 1rem 0;
+    }
+    
+    .emotions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .emotion-tag {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    
+    .emotion-sad {
+      border-color: #3949ab;
+      color: #3949ab;
+    }
+    
+    .emotion-neutral {
+      border-color: #9e9e9e;
+      color: #757575;
+    }
+    
+    .emotion-happy {
+      border-color: #ffa000;
+      color: #ff8f00;
+    }
+    
+    .emotion-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resources {
+      background-color: #f5f7ff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .resources h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .content {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header><h1>Sad vs Happy</h1></header>
-  <div class="content">
-    <a href="index.html" class="back-link">&#8592; Back to Home</a>
-    <h2>Description</h2>
-    <p>This emotional continuum ranges from profound sadness and hopelessness, through states of resignation and neutrality, evolving towards contentment, joy, and deep emotional fulfillment.</p>
+  <header>
+    <h1>Emotional Spectrum: Sad to Happy</h1>
+  </header>
+  
+  <div class="container">
+    <div class="content">
+      <a href="index.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+      </a>
+      
+      <h2>Understanding the Emotional Spectrum</h2>
+      <p>This emotional continuum ranges from profound sadness and hopelessness, through states of resignation and neutrality, evolving towards contentment, joy, and deep emotional fulfillment. Recognizing where you are on this spectrum can help with emotional awareness and growth.</p>
+      
+      <div class="emotion-spectrum">
+        <h3>Visualizing the Spectrum</h3>
+        <div class="spectrum-container" role="img" aria-label="Visual gradient from sad (blue) to happy (yellow)"></div>
+        <div class="emotions-list">
+          <span class="emotion-tag emotion-sad">Despair</span>
+          <span class="emotion-tag emotion-sad">Grief</span>
+          <span class="emotion-tag emotion-sad">Sorrow</span>
+          <span class="emotion-tag emotion-sad">Heartbroken</span>
+          <span class="emotion-tag emotion-neutral">Indifferent</span>
+          <span class="emotion-tag emotion-neutral">Neutral</span>
+          <span class="emotion-tag emotion-happy">Content</span>
+          <span class="emotion-tag emotion-happy">Joyful</span>
+          <span class="emotion-tag emotion-happy">Ecstatic</span>
+        </div>
+      </div>
 
-    <h2>Understanding</h2>
-    <p>Experiencing sadness often signals emotional pain, loss, or unmet emotional needs. Recognizing and validating these feelings can help you find healing, acceptance, and eventually move toward authentic joy and fulfillment.</p>
+      <h2>Understanding Emotions</h2>
+      <p>Experiencing sadness often signals emotional pain, loss, or unmet emotional needs. Recognizing and validating these feelings can help you find healing, acceptance, and eventually move toward authentic joy and fulfillment. All emotions serve a purpose and provide valuable information about our inner state.</p>
 
-    <h2>Helping Others</h2>
-    <ul>
-      <li>Offer empathetic presence, active listening, and validation of their emotional experiences.</li>
-      <li>Provide comfort without pressuring for immediate emotional resolution.</li>
-      <li>Encourage participation in meaningful, joyful activities that gently uplift mood.</li>
-    </ul>
+      <h2>Supporting Others</h2>
+      <ul>
+        <li>Offer empathetic presence, active listening, and validation of their emotional experiences.</li>
+        <li>Provide comfort without pressuring for immediate emotional resolution.</li>
+        <li>Encourage participation in meaningful, joyful activities that gently uplift mood.</li>
+        <li>Respect their emotional journey and validate that all feelings are legitimate.</li>
+      </ul>
 
-    <h2>Helping Myself</h2>
-    <ul>
-      <li>Permit yourself to fully experience and validate sadness to foster emotional healing.</li>
-      <li>Engage regularly in activities that bring genuine joy and emotional nourishment.</li>
-      <li>Reach out proactively to supportive friends, family, or professionals during emotionally challenging times.</li>
-    </ul>
+      <h2>Self-Care Strategies</h2>
+      <ul>
+        <li>Permit yourself to fully experience and validate sadness to foster emotional healing.</li>
+        <li>Engage regularly in activities that bring genuine joy and emotional nourishment.</li>
+        <li>Practice mindfulness to observe emotions without judgment.</li>
+        <li>Maintain a balanced routine with adequate sleep, nutrition, and exercise.</li>
+        <li>Reach out proactively to supportive friends, family, or professionals during emotionally challenging times.</li>
+      </ul>
 
-    <h2>Range of Emotions</h2>
-    <p>Despair, Hopeless, Grief, Misery, Depressed, Sorrow, Heartbroken, Helpless, Lonely, Disappointment, Regretful, Melancholy, Bored, Indifferent, Neutral, Hopeful, Content, Relieved, Satisfied, Grateful, Cheerful, Joyful, Excited, Thrilled, Elated, Blissful, Ecstatic, Radiant, Happiness</p>
+      <h2>Complete Emotional Range</h2>
+      <p>The spectrum of emotions from sad to happy includes: Despair, Hopelessness, Grief, Misery, Depression, Sorrow, Heartbreak, Helplessness, Loneliness, Disappointment, Regret, Melancholy, Boredom, Indifference, Neutrality, Hope, Contentment, Relief, Satisfaction, Gratitude, Cheerfulness, Joy, Excitement, Thrill, Elation, Bliss, Ecstasy, Radiance, and Happiness.</p>
+      
+      <div class="resources">
+        <h3>Additional Resources</h3>
+        <p>If you're experiencing persistent sadness or need professional support, consider reaching out to mental health services or using these resources:</p>
+        <ul>
+          <li>National Crisis Hotline: 988</li>
+          <li>Online therapy options</li>
+          <li>Local support groups</li>
+          <li>Mindfulness and meditation apps</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>
