@@ -4,99 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anger to Satori (Zen) Emotional Spectrum</title>
-  <style>
-    :root {
-      --primary-color: #b71c1c;
-      --secondary-color: #ffffff;
-      --accent: #ff5252;
-      --border-radius: 8px;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #ffebee, #ffffff);
-      padding: 0;
-      margin: 0;
-    }
-
-    header {
-      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-      box-shadow: var(--box-shadow);
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .content {
-      background: white;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    h1 { font-size: 2.5rem; }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-      transition: 0.3s ease;
-    }
-
-    .back-link:hover { color: var(--secondary-color); }
-
-    h2 {
-      color: var(--primary-color);
-      margin: 1.5rem 0 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--accent);
-      font-size: 1.5rem;
-    }
-
-    .spectrum-container {
-      position: relative;
-      height: 3rem;
-      background: linear-gradient(to right, #b71c1c, #ffffff);
-      border-radius: var(--border-radius);
-      margin: 1rem 0;
-    }
-
-    .emotions-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .emotion-tag {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .emotion-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--box-shadow);
-    }
-
-  </style>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="emotions.css">
 </head>
 <body>
   <header>
@@ -112,7 +21,7 @@
 
       <div class="emotion-spectrum">
         <h3>Visualizing the Spectrum</h3>
-        <div class="spectrum-container" role="img" aria-label="Visual gradient from anger (red) to zen (white)"></div>
+        <div class="spectrum-container spectrum-anger-zen" role="img" aria-label="Visual gradient from anger (red) to zen (white)"></div>
         <div class="emotions-list">
           <span class="emotion-tag">Rage</span>
           <span class="emotion-tag">Frustration</span>
@@ -122,6 +31,7 @@
           <span class="emotion-tag">Tranquility</span>
           <span class="emotion-tag">Zen</span>
         </div>
+      </div>
 
       <h2>Supporting Others</h2>
       <ul>
@@ -147,7 +57,8 @@
           <li>Anger management counseling resources</li>
           <li>Professional mental health support services</li>
           <li>Mindfulness apps like Headspace or Calm</li>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
