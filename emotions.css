@@ -175,6 +175,11 @@
     /* Matches BadGood.html gradient from bad (darkblue) to good (lightcoral) */
     background: linear-gradient(to right, darkblue, lightcoral);
   }
+
+  .spectrum-defensive-open {
+    /* Defensiveness to openness gradient */
+    background: linear-gradient(to right, #ff8f00, #26c6da);
+  }
   
   /* Resources box (if needed) */
   .resources {
@@ -186,6 +191,26 @@
   .resources h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+  }
+
+  .checklist {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .checklist li {
+    margin-bottom: 0.75rem;
+  }
+
+  .checklist label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .checklist input {
+    margin-top: 0.2rem;
+    accent-color: var(--primary-color);
   }
   
   /* Responsive adjustments */

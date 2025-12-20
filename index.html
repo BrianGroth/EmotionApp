@@ -92,6 +92,7 @@
       border-radius: var(--border-radius);
       box-shadow: var(--card-shadow);
       transition: var(--transition);
+      display: block;
       overflow: hidden;
       height: 100%;
       position: relative;
@@ -211,6 +212,18 @@
     
     .hate-love::after {
       content: "Love";
+    }
+
+    .defensive-open {
+      background: linear-gradient(to right, #ff8f00, #26c6da);
+    }
+
+    .defensive-open::before {
+      content: "Defensive";
+    }
+
+    .defensive-open::after {
+      content: "Open";
     }
     
     /* Tips Section */
@@ -373,6 +386,14 @@
           <div class="color-bar hate-love"></div>
         </div>
       </a>
+
+      <a href="Defensiveness.html" class="emotion-pair">
+        <div class="content">
+          <span class="emotion-text">Defensiveness &#8594; Openness</span>
+          <p class="emotion-description">Notice when you shield or deflect, then shift toward curiosity, accountability, and connection.</p>
+          <div class="color-bar defensive-open"></div>
+        </div>
+      </a>
     </div>
     
     <div class="tips-section">
@@ -403,3 +424,4 @@
   </div>
 </body>
 </html>
+
