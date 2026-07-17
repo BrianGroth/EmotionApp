@@ -162,3 +162,65 @@ body:has(.detail-page), body:has(.container) { background: var(--wash); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Therapy-informed range pages */
+.range-page { --range-accent: #6e4bc3; --range-soft: #f5efff; --range-deep: #382565; }
+.range-page--fear { --range-accent: #527b99; --range-soft: #edf5f9; --range-deep: #2b536d; }
+.range-page--anger { --range-accent: #d95757; --range-soft: #fff0f0; --range-deep: #812e36; }
+.range-page--sad { --range-accent: #c8bd45; --range-soft: #fffceb; --range-deep: #6a6420; }
+.range-page--bad { --range-accent: #5f9c78; --range-soft: #eff8f1; --range-deep: #356b4d; }
+.range-page--hate { --range-accent: #8a54d1; --range-soft: #f6efff; --range-deep: #4d2a84; }
+.range-page .content { padding: clamp(24px, 5vw, 62px); }
+.range-page .back-link { margin-bottom: 28px; }
+.range-hero { padding: 8px 0 34px; }
+.range-hero h2 { border: 0; padding: 0; margin: 0; color: var(--ink); font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2.8rem, 8vw, 5.4rem); font-weight: 400; }
+.range-lede { max-width: 700px; margin-top: 18px; color: var(--range-deep); font-size: clamp(1.02rem, 2vw, 1.22rem); line-height: 1.55; }
+.range-spectrum { margin-top: 30px; }
+.range-spectrum-bar { height: 14px; border-radius: 99px; box-shadow: inset 0 0 0 1px rgba(23,34,53,.12), 0 5px 12px rgba(23,34,53,.08); }
+.range-endpoints { display: flex; justify-content: space-between; margin-top: 9px; color: var(--muted); font-size: .78rem; font-weight: 700; }
+.guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.guide-block { padding: 34px 0 30px; }
+.guide-block + .guide-block { padding-left: 34px; border-left: 1px solid var(--line); }
+.range-page h2 { color: var(--ink); font-size: clamp(1.38rem, 3vw, 1.8rem); }
+.guide-block h2, .guide-section h2 { margin: 0 0 13px; padding: 0; border: 0; }
+.guide-block p, .guide-section p { color: var(--muted); }
+.signal-list { display: grid; gap: 9px; padding: 0; margin: 0; list-style: none; }
+.signal-list li { position: relative; margin: 0; padding-left: 22px; color: var(--muted); }
+.signal-list li::before { content: ''; position: absolute; left: 0; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: var(--range-accent); box-shadow: 0 0 0 4px var(--range-soft); }
+.guide-section { padding: 34px 0 6px; border-top: 1px solid var(--line); }
+.practice-panel { margin: 26px 0 34px; padding: clamp(24px, 4vw, 38px); border: 1px solid color-mix(in srgb, var(--range-accent) 28%, var(--line)); border-left: 5px solid var(--range-accent); border-radius: 18px; background: var(--range-soft); }
+.practice-panel h2 { color: var(--range-deep); }
+.practice-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 26px 0 0; padding: 0; list-style: none; }
+.practice-steps li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; margin: 0; color: var(--muted); }
+.step-number { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--range-accent); font-weight: 700; }
+.practice-steps strong { display: block; margin-bottom: 5px; color: var(--range-deep); }
+.practice-steps p { font-size: .92rem; }
+.response-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, .75fr); gap: 28px; align-items: center; }
+.response-layout blockquote { margin: 0; padding: 22px 26px; border-left: 4px solid var(--range-accent); border-radius: 0 14px 14px 0; background: var(--range-soft); color: var(--range-deep); font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.25; }
+.range-page .range-visual { margin-top: 22px; border-color: color-mix(in srgb, var(--range-accent) 20%, var(--line)); }
+.range-page .range-track { background-image: var(--range-gradient); }
+.range-page--fear .range-track { --range-gradient: linear-gradient(105deg, #40505a, #8eb1ca); }
+.range-page--anger .range-track { --range-gradient: linear-gradient(105deg, #fa6565, #ffc2c4); }
+.range-page--sad .range-track { --range-gradient: linear-gradient(105deg, #c9ca8f, #fff36b); }
+.range-page--bad .range-track { --range-gradient: linear-gradient(105deg, #4f8c79, #a8d997); }
+.range-page--hate .range-track { --range-gradient: linear-gradient(105deg, #a94eb4, #e4aadf); }
+.support-panel { padding-bottom: 28px; }
+.support-panel p { max-width: 700px; }
+.range-page .resources { margin-top: 26px; border-top: 3px solid var(--range-accent); background: var(--range-soft); }
+.range-page .resources h3 { color: var(--range-deep); }
+.disclaimer { margin-top: 28px; color: var(--muted); font-size: .78rem; text-align: center; }
+
+@media (max-width: 720px) {
+  .range-page .content { padding: 22px 18px 30px; }
+  .range-hero { padding-bottom: 24px; }
+  .range-hero h2 { font-size: clamp(2.7rem, 15vw, 4.5rem); }
+  .range-lede { font-size: 1rem; }
+  .guide-grid { display: block; }
+  .guide-block { padding: 28px 0 24px; }
+  .guide-block + .guide-block { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .practice-steps { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .practice-steps li { grid-template-columns: 30px 1fr; }
+  .response-layout { display: block; }
+  .response-layout p { margin-top: 18px; }
+  .range-page .range-visual { margin-right: -2px; margin-left: -2px; }
+}
