@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hate to Love Emotional Spectrum</title>
   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="emotions.css">
+  <link rel="stylesheet" href="emotions.css?v=3">
 </head>
 <body>
-  <header>
-    <h1>Hate to Love Emotional Spectrum</h1>
+  <header class="detail-header">
+    <div class="site-shell">
+      <div class="site-header">
+        <a class="brand" href="index.html" aria-label="EmotionApp home"><img class="brand-mark" src="emotion_identifier_icon.png" alt=""><span>EmotionApp</span></a>
+        <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="index.html#about">About</a></nav>
+        <details class="nav-menu"><summary aria-label="Open navigation menu">Menu</summary><nav aria-label="Mobile navigation"><a href="index.html">Home</a><a href="index.html#about">About</a></nav></details>
+      </div>
+      <h1 class="page-title">Hate to Love Emotional Spectrum</h1>
+    </div>
   </header>
 
   <div class="container">
@@ -49,6 +56,24 @@
 
       <h2>Complete Emotional Range</h2>
       <p>This spectrum includes: Hatred, Loathing, Contempt, Hostility, Resentment, Indifference, Neutral, Empathy, Compassion, Affection, Warmth, Love, Unconditional Love.</p>
+      <div class="range-visual" aria-label="Complete emotional range from Hatred to Unconditional Love">
+        <div class="emotional-range">
+          <div class="range-track spectrum-hate-love" aria-hidden="true"></div>
+          <span class="range-point range-point--top range-point--start" style="--position: 0%"><span class="range-word">Hatred</span></span>
+          <span class="range-point range-point--bottom" style="--position: 8%"><span class="range-word">Loathing</span></span>
+          <span class="range-point range-point--top" style="--position: 16%"><span class="range-word">Contempt</span></span>
+          <span class="range-point range-point--bottom" style="--position: 25%"><span class="range-word">Hostility</span></span>
+          <span class="range-point range-point--top" style="--position: 33%"><span class="range-word">Resentment</span></span>
+          <span class="range-point range-point--bottom" style="--position: 41%"><span class="range-word">Indifference</span></span>
+          <span class="range-point range-point--top" style="--position: 50%"><span class="range-word">Neutral</span></span>
+          <span class="range-point range-point--bottom" style="--position: 59%"><span class="range-word">Empathy</span></span>
+          <span class="range-point range-point--top" style="--position: 67%"><span class="range-word">Compassion</span></span>
+          <span class="range-point range-point--bottom" style="--position: 75%"><span class="range-word">Affection</span></span>
+          <span class="range-point range-point--top" style="--position: 83%"><span class="range-word">Warmth</span></span>
+          <span class="range-point range-point--bottom" style="--position: 92%"><span class="range-word">Love</span></span>
+          <span class="range-point range-point--top range-point--end" style="--position: 100%"><span class="range-word">Unconditional Love</span></span>
+        </div>
+      </div>
 
       <div class="resources">
         <h3>Additional Resources</h3>

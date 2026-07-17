@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fear to Trust Emotional Spectrum</title>
   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="emotions.css">
+  <link rel="stylesheet" href="emotions.css?v=3">
 </head>
 <body>
-  <header>
-    <h1>Emotional Spectrum: Fear to Trust</h1>
+  <header class="detail-header">
+    <div class="site-shell">
+      <div class="site-header">
+        <a class="brand" href="index.html" aria-label="EmotionApp home"><img class="brand-mark" src="emotion_identifier_icon.png" alt=""><span>EmotionApp</span></a>
+        <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="index.html#about">About</a></nav>
+        <details class="nav-menu"><summary aria-label="Open navigation menu">Menu</summary><nav aria-label="Mobile navigation"><a href="index.html">Home</a><a href="index.html#about">About</a></nav></details>
+      </div>
+      <h1 class="page-title">Emotional Spectrum: Fear to Trust</h1>
+    </div>
   </header>
   
   <div class="container">
@@ -49,6 +56,24 @@
 
       <h2>Complete Emotional Range</h2>
       <p>The spectrum includes: Terror, Panic, Anxiety, Nervousness, Uneasy, Apprehension, Neutrality, Calmness, Assurance, Confidence, Safety, Trust, Faith.</p>
+      <div class="range-visual" aria-label="Complete emotional range from Terror to Faith">
+        <div class="emotional-range">
+          <div class="range-track spectrum-fear-trust" aria-hidden="true"></div>
+          <span class="range-point range-point--top range-point--start" style="--position: 0%"><span class="range-word">Terror</span></span>
+          <span class="range-point range-point--bottom" style="--position: 8%"><span class="range-word">Panic</span></span>
+          <span class="range-point range-point--top" style="--position: 16%"><span class="range-word">Anxiety</span></span>
+          <span class="range-point range-point--bottom" style="--position: 24%"><span class="range-word">Nervousness</span></span>
+          <span class="range-point range-point--top" style="--position: 32%"><span class="range-word">Uneasy</span></span>
+          <span class="range-point range-point--bottom" style="--position: 40%"><span class="range-word">Apprehension</span></span>
+          <span class="range-point range-point--top" style="--position: 48%"><span class="range-word">Neutrality</span></span>
+          <span class="range-point range-point--bottom" style="--position: 56%"><span class="range-word">Calmness</span></span>
+          <span class="range-point range-point--top" style="--position: 64%"><span class="range-word">Assurance</span></span>
+          <span class="range-point range-point--bottom" style="--position: 72%"><span class="range-word">Confidence</span></span>
+          <span class="range-point range-point--top" style="--position: 82%"><span class="range-word">Safety</span></span>
+          <span class="range-point range-point--bottom" style="--position: 91%"><span class="range-word">Trust</span></span>
+          <span class="range-point range-point--top range-point--end" style="--position: 100%"><span class="range-word">Faith</span></span>
+        </div>
+      </div>
 
       <div class="resources">
         <h3>Additional Resources</h3>
